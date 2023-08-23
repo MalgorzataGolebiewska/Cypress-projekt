@@ -1,0 +1,21 @@
+{
+  "name": "cypress-projekt",
+  "version": "1.0.0",
+  "description": "Testy automatyczne cypress",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress",
+    "testy",
+    "automatyczne",
+    "kurs"
+  ],
+  "author": "ja",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.17.3"
+  }
+}
