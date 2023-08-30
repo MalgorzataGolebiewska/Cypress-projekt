@@ -7,4 +7,6 @@ describe("E2E - Akcje klikniecia", () => {
         cy.contains('[title="Contact us"]', 'Contact us').click();
         cy.get('[title="Return to Home"]').click();
     })
+
+    
 })

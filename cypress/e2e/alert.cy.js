@@ -15,6 +15,6 @@ describe("E2E - Alerty", () => {
             expect(tresc).to.equal("Zaakceptuj aby kontynuować!")
         })
 
-        cy.on("window:confirm", () =>)
+        cy.on("window:confirm", () => false)
     })
 })

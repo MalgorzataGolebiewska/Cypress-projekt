@@ -15,12 +15,11 @@ describe("E2E - Akcja wybrania opcji select", () => {
     })
 
     it.only("Wybieranie wszystkich opcji", () => {
-        cy.visit('/')
-        cy.get('[src="http://www.automationpractice.pl/index.php?id_category=3&controller=category"]').click()
+        cy.visit('//index.php?id_category=3&controller=category')
 
         cy.get("#selectProductSort").then(dropdown => {
             cy.wrap(dropdown).find("option").each(opcja => {
-                cy.wrap(dropdown).select(opcja.text())
+                cy.wrap(opcja.text())
             })
         })
     })
