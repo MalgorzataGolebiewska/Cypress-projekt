@@ -1,20 +1,17 @@
 /// <reference types="cypress" />
 
+import alertPage from "../support/page-object/alertPage";
+
 describe("E2E - Alerty", () => {
     it("Alert", () => {
         cy.visit("https://testowanie-oprogramowania.pl/lekcje/alerty/")
-        cy.get("#alert").click();
-        cy.on("window:alert", tresc => {
-            expect(tresc).to.equal("Przykładowa treść alertu")
-        })
+        alertPage.clickOnButtonAlert1();
+        alertPage.verifyAlertText();
     })
 
     it("Alert confirm", () => {
-        cy.get("#alert-confirm").click();
-        cy.on("window:confirm", tresc => {
-            expect(tresc).to.equal("Zaakceptuj aby kontynuować!")
-        })
-
-        cy.on("window:confirm", () => false)
+        alertPage.buttonAlert2();
+        alertPage.verifyAlertConfirmText("Zaakceptuj aby kontynuować!");
+        alertPage.rejectAlert();
     })
 })

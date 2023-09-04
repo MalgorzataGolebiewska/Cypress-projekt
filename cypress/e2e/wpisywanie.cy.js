@@ -3,13 +3,13 @@
 describe("E2E - Akcja wpisywania", () => {
     it("Wpisywanie wartosci w pole", () => {
         cy.visit('/')
-        cy.get("#search_query_top").type("Przykladowy produkt{backspace}", {delay: 500})
+        cy.searchPhrase("Nowy tekst", 1200);
 
     })
 
     it("Czyszczenie wartosci z pola input", () =>{
         cy.visit('/')
-        cy.get("#search_query_top").type("Przykladowy produkt{backspace}", {delay: 500})
-        cy.get("#search_query_top").focus().clear();
+        cy.searchPhrase("Test", 1000)
+        cy.clearPhrase();
     })
 })

@@ -18,6 +18,17 @@ import 'cypress-file-upload';
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
+Cypress.Commands.add("openTshirtsTab", () => {
+    cy.visit("http://www.automationpractice.pl/index.php?id_category=5&controller=category");
+})
+
+Cypress.Commands.add("searchPhrase", (tekst, delayValue) => {
+    cy.get("#search_query_top").type(tekst, {delay: delayValue})
+})
+
+Cypress.Commands.add("clearPhrase", () => {
+    cy.get("#search_query_top").focus().clear();
+})
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
