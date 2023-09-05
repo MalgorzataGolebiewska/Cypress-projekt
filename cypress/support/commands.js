@@ -29,6 +29,12 @@ Cypress.Commands.add("searchPhrase", (tekst, delayValue) => {
 Cypress.Commands.add("clearPhrase", () => {
     cy.get("#search_query_top").focus().clear();
 })
+
+Cypress.Commands.add("login", (email, password) => {
+    cy.get('[placeholder="Email"]').type(email);
+    cy.get('[placeholder="Password"]').type(password);
+    cy.get('[type="submit"]').click();
+})
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
