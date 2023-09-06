@@ -31,4 +31,16 @@ describe("E2E - Testy API", () => {
         })
     
     })
+    it("Poprawne logowanie", function() {
+        cy.intercept("GET", "https://api.realworld.io/api/tags", { fixture: 'tags.json' }).as("requestTag");
+        cy.visit("https://angular.realworld.io/")
+        cy.get("a.nav-link").contains("Sign in").click();
+        cy.login("test123@test123.pl", "test")
+        cy.wait("@requestTag")
+        cy.get("@requestTag").then(res => {
+            console.log(res)
+            expect(res.response.body.tags).to.contain("cat")
+        })
+
+    })
 })
