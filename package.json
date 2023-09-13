@@ -4,7 +4,11 @@
   "description": "Testy automatyczne cypress",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open",
+    "open": "npx cypress open",
+    "all": "npx cypress run",
+    "spec": "npx cypress run --spec 'cypress/e2e/klikniecie.cy.js' --headed",
+    "chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/klikniecie.cy.js' --headed",
+    "firefox": "npm run spec -- --browser firefox:dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

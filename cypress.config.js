@@ -5,6 +5,7 @@ module.exports = defineConfig({
    baseUrl: 'http://www.automationpractice.pl',
    includeShadowDom: true,
    viewportHeight: 1080,
-   viewportWidth: 1920
+   viewportWidth: 1920,
+   video: false
   },
 })
